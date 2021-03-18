@@ -12,6 +12,7 @@ bot = commands.Bot(command_prefix="!")
 @bot.event
 async def on_ready():
     print("bot is ready...")
+    await bot.change_presence(activity=discord.Game("attendre que vous jouez à Pierre-Feuille-Ciseau"))
 
 
 @bot.command(name='del')
