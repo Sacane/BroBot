@@ -1,8 +1,12 @@
+import os
 from hide import token
 from discord.ext import commands
 import discord
 import pfc_game as p
 import random
+from dotenv import load_dotenv
+
+load_dotenv(dotenv_path="config")
 
 bot = commands.Bot(command_prefix="!")
 
@@ -48,4 +52,4 @@ async def pfc_start(ctx, name_player1: discord.Member = None, name_player2: disc
             i += 1
         await ctx.send(f"```{p.display_winner(player1, player2)}```")
 
-bot.run(token)
+bot.run(os.getenv("TOKEN"))
