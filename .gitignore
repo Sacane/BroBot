@@ -10,6 +10,11 @@
 .idea/**/dictionaries
 .idea/**/shelf
 
+
+#my personal file to hide
+hide.py
+hide
+
 # Generated files
 .idea/**/contentModel.xml
 
