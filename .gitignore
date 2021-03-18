@@ -9,11 +9,7 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
-
-
-#my personal file to hide
-hide.py
-hide
+.idea
 
 # Generated files
 .idea/**/contentModel.xml
