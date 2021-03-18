@@ -1,5 +1,4 @@
 import os
-from hide import token
 from discord.ext import commands
 import discord
 import pfc_game as p

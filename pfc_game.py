@@ -1,6 +1,4 @@
 import random
-
-map_game = {0: "pierre", 1: "feuille", 2: "ciseau"}
 random.seed(None)
 
 class Player:
