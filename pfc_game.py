@@ -5,27 +5,27 @@ class Player:
     def __init__(self, name: str):
         self.name = name
         self.score = 0
-        self.current_kind = 0
-        self.choice = {0: "pierre", 1: "feuille", 2: "ciseaux"}
+        self.current_stroke = 0
+        self.choices = ["pierre", "feuille", "ciseaux"]
 
     def equals(self, other):
-        return self.current_kind == other.current_kind
+        return self.current_stroke == other.current_stroke
 
     def isWinning(self, other):
         return self.score > other.score
 
-    def updateCurrentKind(self):
-        self.current_kind = random.randint(0, 2)
-        print(self.current_kind)
+    def updateStroke(self):
+        self.current_stroke = random.randint(0, 2)
+        print(self.current_stroke)
 
-    def kind_rep(self):
-        return f"{self.choice[self.current_kind]}"
+    def strokeType(self):
+        return f"{self.choices[self.current_stroke]}"
 
     def __str__(self):
         return f"{self.name}"
 
     def current_plays(self):
-        return f"{self} a joué {self.kind_rep()}"
+        return f"{self} a joué {self.strokeType()}"
 
     def inc_score(self):
         self.score += 1
@@ -33,13 +33,13 @@ class Player:
 
 def updateRound(player1: Player, player2: Player):
     random.seed(None)
-    player1.updateCurrentKind()
-    player2.updateCurrentKind()
+    player1.updateStroke()
+    player2.updateStroke()
     if player1.equals(player2):
         return
-    if (player1.current_kind == 2 and player2.current_kind == 1) or \
-            (player1.current_kind == 1 and player2.current_kind == 0) or \
-            (player1.current_kind == 0 and player2.current_kind == 2):
+    if (player1.current_stroke == 2 and player2.current_stroke == 1) or \
+            (player1.current_stroke == 1 and player2.current_stroke == 0) or \
+            (player1.current_stroke == 0 and player2.current_stroke == 2):
         player1.inc_score()
     else:
         player2.inc_score()
